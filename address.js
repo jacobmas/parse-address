@@ -456,22 +456,6 @@
     "wyoming" : "WY",
   };
 
-    var Province_Code={
-	"alberta" : "AB",
-	"british columbia" : "BC",
-	"manitoba" : "MB",
-	"ontario" : "ON",
-	"new brunswick" : "NB",
-	"newfoundland and labrador" : "NL",
-	"northwest territories" : "NT",
-	"nova scotia" : "NS",
-	"nunavut" : "NU",
-	"prince edward island" : "PE",
-	"quebec" : "QC",
-	"saskatchewan" : "SK",
-	"yukon" : "YT"
-    };
-
   var Direction_Code;
   var initialized = false;
 
@@ -543,7 +527,7 @@
     };
       
 
-    Addr_Match.number = '(?<number>\\d+-?\\d*)(?=\\D)';
+    Addr_Match.number = '(?<number>('+Addr_Match.direct+')?\\d+-?\\d*)(?=\\D)';
 
     Addr_Match.street = '                                       \n\
       (?:                                                       \n\
