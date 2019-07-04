@@ -456,6 +456,22 @@
     "wyoming" : "WY",
   };
 
+    var Province_Code={
+	"alberta" : "AB",
+	"british columbia" : "BC",
+	"manitoba" : "MB",
+	"ontario" : "ON",
+	"new brunswick" : "NB",
+	"newfoundland and labrador" : "NL",
+	"northwest territories" : "NT",
+	"nova scotia" : "NS",
+	"nunavut" : "NU",
+	"prince edward island" : "PE",
+	"quebec" : "QC",
+	"saskatchewan" : "SK",
+	"yukon" : "YT"
+    };
+
   var Direction_Code;
   var initialized = false;
 
@@ -522,8 +538,10 @@
       direct  : values(Directional).sort(function(a,b){return a.length < b.length}).reduce(function(prev,curr){return prev.concat([XRegExp.escape(curr.replace(/\w/g,'$&.')),curr])},keys(Directional)).join('|'),
       dircode : keys(Direction_Code).join("|"),
       zip     : '(?<zip>\\d{5})[- ]?(?<plus4>\\d{4})?',
-      corner  : '(?:\\band\\b|\\bat\\b|&|\\@)',
+	corner  : '(?:\\band\\b|\\bat\\b|&|\\@)',
+	country : 'United States'
     };
+      
 
     Addr_Match.number = '(?<number>\\d+-?\\d*)(?=\\D)';
 
